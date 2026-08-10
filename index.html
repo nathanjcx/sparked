@@ -831,17 +831,17 @@
     /* —— Cadence / presence growth —— */
     .cadence {
       border-top: 1px solid var(--line);
-      padding: 80px clamp(18px, 4vw, 40px) 72px;
+      padding: 56px clamp(18px, 4vw, 40px) 48px;
       text-align: center;
     }
 
     .cadence h2 {
       font-family: var(--font-display);
       font-weight: 400;
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
       letter-spacing: -0.01em;
       line-height: 1.2;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .cadence h2 .accent {
@@ -851,301 +851,47 @@
 
     .cadence-lede {
       color: var(--muted);
-      font-size: clamp(0.95rem, 2vw, 1.05rem);
-      margin: 0 auto 40px;
-      white-space: nowrap;
+      font-size: 15px;
+      margin: 0 auto 28px;
     }
 
-    .cadence-graphic {
-      width: min(760px, 100%);
+    .cadence-wave {
+      width: min(420px, 100%);
       margin: 0 auto;
-      position: relative;
-    }
-
-    .cadence-stage {
-      position: relative;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background:
-        radial-gradient(520px 220px at 78% 18%, rgba(255, 90, 31, 0.16), transparent 55%),
-        linear-gradient(180deg, #101010 0%, #070707 100%);
-      padding: 28px 24px 22px;
-      overflow: hidden;
-      min-height: 320px;
-    }
-
-    .cadence-live {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      z-index: 3;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 90, 31, 0.35);
-      background: rgba(0, 0, 0, 0.55);
-      backdrop-filter: blur(10px);
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .cadence-live strong {
-      color: var(--ink);
-      font-weight: 500;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .cadence-live .up {
-      color: #7dffa0;
-    }
-
-    .cadence-live .pulse {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--brand);
-      animation: live-glow 1.8s ease-out infinite;
-    }
-
-    @keyframes live-glow {
-      0% { box-shadow: 0 0 0 0 rgba(255, 90, 31, 0.55); }
-      70% { box-shadow: 0 0 0 10px rgba(255, 90, 31, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(255, 90, 31, 0); }
-    }
-
-    .cadence-bars {
+      height: 72px;
       display: flex;
       align-items: flex-end;
-      justify-content: space-between;
-      gap: clamp(6px, 1.2vw, 12px);
-      height: 200px;
-      margin-top: 36px;
-      padding: 0 4px;
-      position: relative;
-      z-index: 1;
+      justify-content: center;
+      gap: 10px;
     }
 
-    .cadence-bar {
-      flex: 1;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      height: 100%;
-    }
-
-    .cadence-bar .stem {
-      width: 100%;
-      max-width: 42px;
-      border-radius: 10px 10px 4px 4px;
-      background: linear-gradient(180deg, var(--brand-hot) 0%, rgba(255, 90, 31, 0.2) 100%);
+    .cadence-wave span {
+      flex: 0 0 14px;
+      border-radius: 999px;
+      background: var(--brand);
       transform-origin: bottom;
-      transform: scaleY(0.08);
-      opacity: 0.35;
-      animation: bar-grow 7s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+      animation: wave-grow 2.4s ease-in-out infinite;
+      opacity: 0.85;
     }
 
-    .cadence-bar .label {
-      margin-top: 10px;
-      font-family: var(--font-mono);
-      font-size: 9px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      white-space: nowrap;
-    }
+    .cadence-wave span:nth-child(1) { height: 22px; animation-delay: 0s; }
+    .cadence-wave span:nth-child(2) { height: 34px; animation-delay: 0.12s; }
+    .cadence-wave span:nth-child(3) { height: 46px; animation-delay: 0.24s; }
+    .cadence-wave span:nth-child(4) { height: 58px; animation-delay: 0.36s; }
+    .cadence-wave span:nth-child(5) { height: 68px; animation-delay: 0.48s; }
+    .cadence-wave span:nth-child(6) { height: 58px; animation-delay: 0.6s; }
+    .cadence-wave span:nth-child(7) { height: 46px; animation-delay: 0.72s; }
 
-    .cadence-bar .chip {
-      position: absolute;
-      bottom: calc(8% + 28px);
-      width: 22px;
-      aspect-ratio: 9 / 16;
-      border-radius: 5px;
-      border: 1px solid rgba(244, 236, 224, 0.2);
-      background:
-        linear-gradient(165deg, rgba(255, 90, 31, 0.55), transparent 55%),
-        #1a1410;
-      opacity: 0;
-      transform: translateY(14px) scale(0.8);
-      animation: chip-rise 7s ease infinite;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-    }
-
-    .cadence-bar:nth-child(1) .stem { height: 18%; animation-delay: 0.1s; }
-    .cadence-bar:nth-child(2) .stem { height: 26%; animation-delay: 0.45s; }
-    .cadence-bar:nth-child(3) .stem { height: 34%; animation-delay: 0.8s; }
-    .cadence-bar:nth-child(4) .stem { height: 48%; animation-delay: 1.15s; }
-    .cadence-bar:nth-child(5) .stem { height: 58%; animation-delay: 1.5s; }
-    .cadence-bar:nth-child(6) .stem { height: 70%; animation-delay: 1.85s; }
-    .cadence-bar:nth-child(7) .stem { height: 82%; animation-delay: 2.2s; }
-    .cadence-bar:nth-child(8) .stem { height: 96%; animation-delay: 2.55s; }
-
-    .cadence-bar:nth-child(1) .chip { bottom: calc(18% + 28px); animation-delay: 0.25s; }
-    .cadence-bar:nth-child(2) .chip { bottom: calc(26% + 28px); animation-delay: 0.6s; }
-    .cadence-bar:nth-child(3) .chip { bottom: calc(34% + 28px); animation-delay: 0.95s; }
-    .cadence-bar:nth-child(4) .chip { bottom: calc(48% + 28px); animation-delay: 1.3s; }
-    .cadence-bar:nth-child(5) .chip { bottom: calc(58% + 28px); animation-delay: 1.65s; }
-    .cadence-bar:nth-child(6) .chip { bottom: calc(70% + 28px); animation-delay: 2s; }
-    .cadence-bar:nth-child(7) .chip { bottom: calc(82% + 28px); animation-delay: 2.35s; }
-    .cadence-bar:nth-child(8) .chip { bottom: calc(96% + 28px); animation-delay: 2.7s; }
-
-    @keyframes bar-grow {
-      0%, 5% { transform: scaleY(0.08); opacity: 0.3; }
-      35% { transform: scaleY(1); opacity: 1; }
-      75% { transform: scaleY(1); opacity: 1; }
-      100% { transform: scaleY(0.08); opacity: 0.3; }
-    }
-
-    @keyframes chip-rise {
-      0%, 8% { opacity: 0; transform: translateY(18px) scale(0.75); }
-      22% { opacity: 1; transform: translateY(0) scale(1); }
-      70% { opacity: 1; transform: translateY(0) scale(1); }
-      100% { opacity: 0; transform: translateY(-8px) scale(0.9); }
-    }
-
-    .cadence-line-svg {
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      top: 64px;
-      height: 200px;
-      width: calc(100% - 48px);
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    .cadence-line-svg path {
-      fill: none;
-      stroke: url(#cadenceStroke);
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: line-draw 7s ease-in-out infinite;
-      filter: drop-shadow(0 0 8px rgba(255, 90, 31, 0.45));
-    }
-
-    @keyframes line-draw {
-      0%, 8% { stroke-dashoffset: 1000; opacity: 0.2; }
-      40% { stroke-dashoffset: 0; opacity: 1; }
-      75% { stroke-dashoffset: 0; opacity: 1; }
-      100% { stroke-dashoffset: 1000; opacity: 0.2; }
-    }
-
-    .cadence-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .cadence-metric {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 14px 12px;
-      background: rgba(12, 12, 12, 0.75);
-      text-align: left;
-      opacity: 0;
-      transform: translateY(8px);
-      animation: metric-in 7s ease infinite;
-    }
-
-    .cadence-metric:nth-child(1) { animation-delay: 0.4s; }
-    .cadence-metric:nth-child(2) { animation-delay: 1.4s; }
-    .cadence-metric:nth-child(3) { animation-delay: 2.5s; }
-
-    @keyframes metric-in {
-      0%, 5% { opacity: 0; transform: translateY(8px); }
-      15% { opacity: 1; transform: translateY(0); }
-      75% { opacity: 1; transform: translateY(0); }
-      100% { opacity: 0.35; transform: translateY(0); }
-    }
-
-    .cadence-metric strong {
-      display: block;
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 4px;
-    }
-
-    .cadence-metric span {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
+    @keyframes wave-grow {
+      0%, 100% { transform: scaleY(0.45); opacity: 0.35; }
+      50% { transform: scaleY(1); opacity: 1; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .cadence-bar .stem,
-      .cadence-bar .chip,
-      .cadence-line-svg path,
-      .cadence-metric,
-      .cadence-live .pulse {
-        animation: none !important;
-      }
-
-      .cadence-bar .stem {
+      .cadence-wave span {
+        animation: none;
         transform: scaleY(1);
-        opacity: 1;
-      }
-
-      .cadence-bar .chip {
-        opacity: 1;
-        transform: none;
-      }
-
-      .cadence-line-svg path {
-        stroke-dashoffset: 0;
-        opacity: 1;
-      }
-
-      .cadence-metric {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .cadence-lede {
-        white-space: normal;
-      }
-
-      .cadence-stage {
-        padding: 22px 14px 16px;
-        min-height: 280px;
-      }
-
-      .cadence-live {
-        top: 12px;
-        right: 12px;
-        font-size: 10px;
-        padding: 6px 10px;
-      }
-
-      .cadence-bar .label {
-        font-size: 8px;
-      }
-
-      .cadence-bar .chip {
-        width: 16px;
-      }
-
-      .cadence-metrics {
-        gap: 8px;
-      }
-
-      .cadence-metric strong {
-        font-size: 1rem;
+        opacity: 0.85;
       }
     }
 
@@ -1792,51 +1538,8 @@
     <section class="cadence" id="cadence" aria-label="Cadence">
       <h2>Online presence that <span class="accent">grows.</span></h2>
       <p class="cadence-lede">Consistent posts. Steady reach. A feed that compounds.</p>
-
-      <div class="cadence-graphic" aria-hidden="true">
-        <div class="cadence-stage">
-          <div class="cadence-live">
-            <span class="pulse"></span>
-            Followers <strong id="cadence-followers">+0</strong>
-            <span class="up">↑</span>
-          </div>
-
-          <svg class="cadence-line-svg" viewBox="0 0 700 200" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="cadenceStroke" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="rgba(255,90,31,0.25)" />
-                <stop offset="100%" stop-color="#ff5a1f" />
-              </linearGradient>
-            </defs>
-            <path d="M20 175 C 90 170, 140 160, 180 148 C 240 130, 280 118, 330 95 C 390 68, 430 58, 490 40 C 550 24, 600 18, 680 12" />
-          </svg>
-
-          <div class="cadence-bars">
-            <div class="cadence-bar"><span class="chip"></span><span class="stem"></span><span class="label">W1</span></div>
-            <div class="cadence-bar"><span class="chip"></span><span class="stem"></span><span class="label">W2</span></div>
-            <div class="cadence-bar"><span class="chip"></span><span class="stem"></span><span class="label">W3</span></div>
-            <div class="cadence-bar"><span class="chip"></span><span class="stem"></span><span class="label">W4</span></div>
-            <div class="cadence-bar"><span class="chip"></span><span class="stem"></span><span class="label">W5</span></div>
-            <div class="cadence-bar"><span class="chip"></span><span class="stem"></span><span class="label">W6</span></div>
-            <div class="cadence-bar"><span class="chip"></span><span class="stem"></span><span class="label">W7</span></div>
-            <div class="cadence-bar"><span class="chip"></span><span class="stem"></span><span class="label">W8</span></div>
-          </div>
-        </div>
-
-        <div class="cadence-metrics">
-          <div class="cadence-metric">
-            <strong>Week 1</strong>
-            <span>Start posting</span>
-          </div>
-          <div class="cadence-metric">
-            <strong>Week 4</strong>
-            <span>Reach climbs</span>
-          </div>
-          <div class="cadence-metric">
-            <strong>Week 12</strong>
-            <span>Presence sticks</span>
-          </div>
-        </div>
+      <div class="cadence-wave" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
     </section>
 
@@ -2005,36 +1708,6 @@
       });
     });
 
-    const followersEl = document.getElementById("cadence-followers");
-    if (followersEl) {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      let n = 0;
-      const target = 2400;
-      const tick = () => {
-        if (reduceMotion) {
-          followersEl.textContent = "+2.4k";
-          return;
-        }
-        n = Math.min(target, n + Math.floor(18 + Math.random() * 40));
-        followersEl.textContent = n >= 1000
-          ? "+" + (Math.round(n / 100) / 10) + "k"
-          : "+" + n;
-        if (n < target) {
-          setTimeout(tick, 120);
-        } else {
-          setTimeout(() => { n = 0; tick(); }, 2800);
-        }
-      };
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            n = 0;
-            tick();
-          }
-        });
-      }, { threshold: 0.35 });
-      io.observe(followersEl.closest(".cadence-stage") || followersEl);
-    }
   </script>
 </body>
 </html>
