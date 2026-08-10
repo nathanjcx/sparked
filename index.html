@@ -157,25 +157,25 @@
     .theme-toggle {
       width: 34px;
       height: 34px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
+      padding: 0;
+      border: 0;
+      border-radius: 0;
       background: transparent;
-      color: var(--ink);
+      color: var(--muted);
       display: inline-grid;
       place-items: center;
       cursor: pointer;
       flex-shrink: 0;
-      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+      transition: color 0.2s ease, opacity 0.2s ease;
     }
 
     .theme-toggle:hover {
-      border-color: var(--ghost-hover);
-      background: var(--surface);
+      color: var(--ink);
     }
 
     .theme-toggle svg {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       display: block;
     }
 
@@ -1488,12 +1488,12 @@
       </nav>
       <div class="nav-actions">
         <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to light mode" title="Toggle theme">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="4" />
             <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
           </svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z" />
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
         </button>
         <button class="btn btn-primary" type="button" data-open-talk>Let's talk</button>
